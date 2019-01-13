@@ -4,3 +4,29 @@ body {
   line-height: 1.7;
   color: $color-grey-dark;
 }
+
+.heading-primary {
+  color: $color-accent-light;
+  font-weight: 900;
+  font-size: 4rem;
+}
+
+.heading-secondary {
+  color: $color-warning;
+  font-weight: 400;
+  font-size: 2.5rem;
+
+  .icon--warning {
+    margin-right: 1rem;
+  }
+}
+
+.highlight {
+  color: $color-accent-blue;
+}
+
+.copyright {
+  color: $color-accent-light;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}

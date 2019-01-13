@@ -1,0 +1,30 @@
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-black, 0.8),
+    rgba($color-black, 0.8)),
+    url(../img/bg-header.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  &__heading-box {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+  &__temp-footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -30%);
+            transform: translate(-50%, -30%);
+  }
+
+}
