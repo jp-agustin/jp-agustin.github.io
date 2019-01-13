@@ -1,3 +1,17 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+*/
 @keyframes moveIcon {
   40% {
     transform: translateY(100%); }
@@ -16,6 +30,15 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box;
@@ -35,7 +58,11 @@ body {
 .heading-secondary {
   color: #ff2c2c;
   font-weight: 400;
-  font-size: 2.5rem; }
+  font-size: 2.5rem;
+  margin-bottom: 15%; }
+  @media only screen and (max-width: 37.5em) {
+    .heading-secondary {
+      margin-bottom: 25%; } }
   .heading-secondary .icon--warning {
     margin-right: 1rem; }
 
@@ -60,6 +87,9 @@ body {
   transition: all 0.2s; }
   .btn-icon:not(:last-child) {
     margin-right: 5rem; }
+    @media only screen and (max-width: 37.5em) {
+      .btn-icon:not(:last-child) {
+        margin-right: 3rem; } }
   .btn-icon:link, .btn-icon:visited {
     padding: 0.5rem 1.8rem;
     color: #d8dbe2;
@@ -80,6 +110,13 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3rem; } }
   .row::after {
     content: "";
     display: table;
@@ -88,6 +125,13 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media only screen and (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
@@ -97,9 +141,9 @@ body {
   .row .col-1-of-4 {
     width: calc((100% - 3 * 6rem) / 4); }
   .row .col-2-of-4 {
-    width: calc(2 *((100% - 3 * 6rem) / 4) + 6rem); }
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
-    width: calc(3 *((100% - 3 * 6rem) / 4) + (2 * 6rem)); }
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .header {
   height: 100vh;
@@ -110,14 +154,7 @@ body {
   .header__heading-box {
     text-align: center;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
-  .header__temp-footer {
-    text-align: center;
-    position: absolute;
-    bottom: 0%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -30%);
-    transform: translate(-50%, -30%); }

@@ -3,6 +3,10 @@
 
   &:not(:last-child) {
     margin-right: 5rem;
+
+    @include respond(phone) {
+      margin-right: 3rem;
+    }
   }
 
   &:link,
